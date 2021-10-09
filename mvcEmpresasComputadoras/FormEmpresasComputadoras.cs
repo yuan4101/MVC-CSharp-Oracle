@@ -26,9 +26,9 @@ namespace MVC_CSharp_Oracle
         {
 
             int varNIT = int.Parse(txtRegistroNIT.Text);
-            string varNombre = txtRegistroNombre.Text;
-            string varFechaCreacion = dtpFechaCreacion.Value.ToString();
-            atrEstadoConsulta = atrEmpresa.ingresarEmpresa(varNIT, varNombre, varFechaCreacion);
+            string varNombre = txtRegistroNombre.Text;     
+            string[] varFechaCreacion = dtpFechaCreacion.Value.ToString().Split();
+            atrEstadoConsulta = atrEmpresa.ingresarEmpresa(varNIT, varNombre, varFechaCreacion[0]);
             if (atrEstadoConsulta > 0) {
                 lblEmpresaEstadoRegistro.Text = "Registro completo";
                 lblEmpresaEstadoRegistro.Visible = true;

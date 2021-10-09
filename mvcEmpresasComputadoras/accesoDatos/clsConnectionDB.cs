@@ -12,6 +12,7 @@ namespace mvcEmpresasComputadoras.accesoDatos
     {
         private static string atrUserDB = "EmpresasComputadoras";
         private static string atrPasswordDB = "bddarwin";
+        //private static string atrPasswordDB = "AnteDatabase";
         private static string atrConnectionDB = "Data Source = localhost; User ID = " + atrUserDB + "; Password=" + atrPasswordDB + ";";
 
         public int executeDML(string prmConsulta) {
