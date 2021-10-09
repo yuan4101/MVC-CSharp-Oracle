@@ -1,7 +1,7 @@
 /*==============================================================*/
-/* Table: COMPUTADORES                                          */
+/* Table: COMPUTADOR                                            */
 /*==============================================================*/
-create table COMPUTADORES 
+create table COMPUTADOR 
 (
    COM_NRO_SERIAL       VARCHAR2(20)         not null,
    EM_NIT               NUMBER(15)           not null,
@@ -11,13 +11,13 @@ create table COMPUTADORES
    COM_TIPO_DISCO_DURO  VARCHAR2(20)         not null,
    COM_CAP_MEMORIA_RAM_GB NUMBER               not null,
    COM_FECHA_ENSAMBLE   DATE                 not null,
-   constraint PK_COMPUTADORES primary key (COM_NRO_SERIAL)
+   constraint PK_COMPUTADOR primary key (COM_NRO_SERIAL)
 );
 
 /*==============================================================*/
 /* Index: REGISTRA_FK                                           */
 /*==============================================================*/
-create index REGISTRA_FK on COMPUTADORES (
+create index REGISTRA_FK on COMPUTADOR (
    EM_NIT ASC
 );
 
@@ -32,6 +32,7 @@ create table EMPRESA
    constraint PK_EMPRESA primary key (EM_NIT)
 );
 
-alter table COMPUTADORES
+alter table COMPUTADOR
    add constraint FK_COMPUTAD_REGISTRA_EMPRESA foreign key (EM_NIT)
       references EMPRESA (EM_NIT);
+
