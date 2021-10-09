@@ -64,6 +64,7 @@ namespace MVC_CSharp_Oracle
         private void btnConsulta_Click(object sender, EventArgs e)
         {
             string varEmpresa = txtCosultaEmpresa.Text;
+
             DataSet varDataSetReult = new DataSet();
             varDataSetReult = atrComputador.consultaComputadorPorEmpresa(varEmpresa);
             dtgvConsultaComputadores.DataSource = varDataSetReult;

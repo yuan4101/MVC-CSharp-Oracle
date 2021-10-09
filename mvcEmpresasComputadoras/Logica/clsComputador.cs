@@ -17,7 +17,7 @@ namespace mvcEmpresasComputadoras.Logica
             int varResultado;
             string prmConsulta;
             prmConsulta = "INSERT INTO COMPUTADOR(COM_NRO_SERIAL, EM_NIT, COM_MARCA, COM_CAP_DISCO_DURO_GB, COM_TIPO_DISCO_DURO, COM_CAP_MEMORIA_RAM_GB, COM_FECHA_ENSAMBLE) " +
-            "VALUES (" + prmSerial + ",'" + prmEM_NIT + "','" + prmMarca + "','" + prmCapDiscoDuro + "','" + prmTipoDisco + "','" + prmCapMemoria + "', TO_DATE('" + prmFechaEnsable + "', 'DD/MM/YY HH:MI:SSAM'))";
+            "VALUES (" + prmSerial + "," + prmEM_NIT + ",'" + prmMarca + "'," + prmCapDiscoDuro + ",'" + prmTipoDisco + "'," + prmCapMemoria + ", TO_DATE('" + prmFechaEnsable + "', 'DD/MM/YY HH:MI:SSAM'))";
             varResultado = atrDataBase.executeDML(prmConsulta);
             return varResultado;
         }
@@ -36,6 +36,7 @@ namespace mvcEmpresasComputadoras.Logica
             varConsulta = "SELECT * FROM COMPUTADOR WHERE EM_NIT = (SELECT EM_NIT FROM EMPRESA WHERE EM_NOMBRE = '"+ prmEmpresa +"')";
             varDB = atrDataBase.executeSELECT(varConsulta);
             return varDB;
+
         }
     }
 }
