@@ -15,7 +15,7 @@ namespace mvcEmpresasComputadoras.Logica
             int varResultado;
             string prmConsulta;
             prmConsulta = "INSERT INTO EMPRESA(EM_NIT, EM_NOMBRE, EM_FECHA_CREACION) " +
-            "VALUES ("+prmNIT+ ",'" + prmNombre+ "', TO_DATE('" + prmDate+ "', 'DD/MM/YY HH:MI:SSAM'))";
+            "VALUES (" + prmNIT + ",'" + prmNombre + "', TO_DATE('" + prmDate + "', 'DD/MM/YY'))";
             varResultado = atrDataBase.executeDML(prmConsulta);
             return varResultado;
         }

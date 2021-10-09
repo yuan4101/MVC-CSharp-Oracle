@@ -179,10 +179,10 @@ namespace MVC_CSharp_Oracle
             // lblEmpresaEstadoRegistro
             // 
             this.lblEmpresaEstadoRegistro.AutoSize = true;
-            this.lblEmpresaEstadoRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpresaEstadoRegistro.Location = new System.Drawing.Point(467, 152);
+            this.lblEmpresaEstadoRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpresaEstadoRegistro.Location = new System.Drawing.Point(452, 152);
             this.lblEmpresaEstadoRegistro.Name = "lblEmpresaEstadoRegistro";
-            this.lblEmpresaEstadoRegistro.Size = new System.Drawing.Size(234, 31);
+            this.lblEmpresaEstadoRegistro.Size = new System.Drawing.Size(210, 29);
             this.lblEmpresaEstadoRegistro.TabIndex = 1;
             this.lblEmpresaEstadoRegistro.Text = "Estado de registro";
             this.lblEmpresaEstadoRegistro.Visible = false;
@@ -291,10 +291,10 @@ namespace MVC_CSharp_Oracle
             // lblComputadorEstadoRegistro
             // 
             this.lblComputadorEstadoRegistro.AutoSize = true;
-            this.lblComputadorEstadoRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblComputadorEstadoRegistro.Location = new System.Drawing.Point(468, 151);
+            this.lblComputadorEstadoRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComputadorEstadoRegistro.Location = new System.Drawing.Point(446, 151);
             this.lblComputadorEstadoRegistro.Name = "lblComputadorEstadoRegistro";
-            this.lblComputadorEstadoRegistro.Size = new System.Drawing.Size(234, 31);
+            this.lblComputadorEstadoRegistro.Size = new System.Drawing.Size(210, 29);
             this.lblComputadorEstadoRegistro.TabIndex = 2;
             this.lblComputadorEstadoRegistro.Text = "Estado de registro";
             this.lblComputadorEstadoRegistro.Visible = false;
@@ -506,6 +506,7 @@ namespace MVC_CSharp_Oracle
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormEmpresasComputadoras";
             this.Text = "Empresas de computadoras";

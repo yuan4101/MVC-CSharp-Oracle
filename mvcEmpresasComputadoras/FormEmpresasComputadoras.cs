@@ -28,12 +28,21 @@ namespace MVC_CSharp_Oracle
             int varNIT = int.Parse(txtRegistroNIT.Text);
             string varNombre = txtRegistroNombre.Text;     
             string[] varFechaCreacion = dtpFechaCreacion.Value.ToString().Split();
-            atrEstadoConsulta = atrEmpresa.ingresarEmpresa(varNIT, varNombre, varFechaCreacion[0]);
-            if (atrEstadoConsulta > 0) {
+            try
+            {
+                atrEstadoConsulta = atrEmpresa.ingresarEmpresa(varNIT, varNombre, varFechaCreacion[0]);
+            }
+            catch (Exception)
+            {
+                atrEstadoConsulta = -1;
+            }
+            if (atrEstadoConsulta > 0)
+            {
                 lblEmpresaEstadoRegistro.Text = "Registro completo";
                 lblEmpresaEstadoRegistro.Visible = true;
             }
-            else {
+            else
+            {
                 lblEmpresaEstadoRegistro.Text = "Registro no completado";
                 lblEmpresaEstadoRegistro.Visible = true;
             }
@@ -47,8 +56,15 @@ namespace MVC_CSharp_Oracle
             int varCapDiscoDuro = int.Parse(txtComputadoraCapDiscoGB.Text); 
             string varTipoDisco = txtComputadoraTipoDiscoDuro.Text;
             int varCapMemoria = int.Parse(txtComputadoraCapRAMGB.Text);
-            string varFechaEnsable = dtpFechaEnsamble.Value.ToString();
-            atrEstadoConsulta = atrComputador.ingresarComputador(varSerial, varEM_NIT, varMarca, varCapDiscoDuro, varTipoDisco, varCapMemoria, varFechaEnsable);
+            string[] varFechaEnsable = dtpFechaEnsamble.Value.ToString().Split();
+            try
+            {
+                atrEstadoConsulta = atrComputador.ingresarComputador(varSerial, varEM_NIT, varMarca, varCapDiscoDuro, varTipoDisco, varCapMemoria, varFechaEnsable[0]);
+            }
+            catch (Exception)
+            {
+                atrEstadoConsulta = -1;
+            }
             if (atrEstadoConsulta > 0)
             {
                 lblComputadorEstadoRegistro.Text = "Registro completo";
