@@ -71,6 +71,7 @@ namespace MVC_CSharp_Oracle
             this.labelNroSerial = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.lblConsultaEstado = new System.Windows.Forms.Label();
             this.tabConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvConsultaComputadores)).BeginInit();
             this.tabRegistro.SuspendLayout();
@@ -84,6 +85,7 @@ namespace MVC_CSharp_Oracle
             // 
             // tabConsulta
             // 
+            this.tabConsulta.Controls.Add(this.lblConsultaEstado);
             this.tabConsulta.Controls.Add(this.dtgvConsultaComputadores);
             this.tabConsulta.Controls.Add(this.labelCosultaEmpresa);
             this.tabConsulta.Controls.Add(this.txtCosultaEmpresa);
@@ -500,6 +502,16 @@ namespace MVC_CSharp_Oracle
             this.tabControl1.Size = new System.Drawing.Size(776, 426);
             this.tabControl1.TabIndex = 0;
             // 
+            // lblConsultaEstado
+            // 
+            this.lblConsultaEstado.AutoSize = true;
+            this.lblConsultaEstado.Location = new System.Drawing.Point(18, 363);
+            this.lblConsultaEstado.Name = "lblConsultaEstado";
+            this.lblConsultaEstado.Size = new System.Drawing.Size(98, 13);
+            this.lblConsultaEstado.TabIndex = 5;
+            this.lblConsultaEstado.Text = "Estado de consulta";
+            this.lblConsultaEstado.Visible = false;
+            // 
             // FormEmpresasComputadoras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -571,6 +583,7 @@ namespace MVC_CSharp_Oracle
         private System.Windows.Forms.Label labelNroSerial;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Label lblConsultaEstado;
     }
 }
 

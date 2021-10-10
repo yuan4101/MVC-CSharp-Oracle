@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using mvcEmpresasComputadoras.Logica;
 
@@ -80,11 +74,20 @@ namespace MVC_CSharp_Oracle
         private void btnConsulta_Click(object sender, EventArgs e)
         {
             string varEmpresa = txtCosultaEmpresa.Text;
-
-            DataSet varDataSetReult = new DataSet();
-            varDataSetReult = atrComputador.consultaComputadorPorEmpresa(varEmpresa);
-            dtgvConsultaComputadores.DataSource = varDataSetReult;
-            dtgvConsultaComputadores.DataMember = "ResultadoDatos";
+            DataSet varDataSetReult;
+            try
+            {
+                varDataSetReult = atrComputador.consultaComputadorPorEmpresa(varEmpresa);
+                dtgvConsultaComputadores.DataSource = varDataSetReult;
+                dtgvConsultaComputadores.DataMember = "ResultadoDatos";
+                lblConsultaEstado.Text = "Consulta realizada correctamente";
+                lblConsultaEstado.Visible = true;
+            }
+            catch (Exception)
+            {
+                lblConsultaEstado.Text = "Consulta no realizada";
+                lblConsultaEstado.Visible = true;
+            }
         }
     }
 }

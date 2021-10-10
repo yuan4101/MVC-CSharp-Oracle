@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using mvcEmpresasComputadoras.accesoDatos;
 
 namespace mvcEmpresasComputadoras.Logica
@@ -16,7 +11,7 @@ namespace mvcEmpresasComputadoras.Logica
         {
             int varResultado;
             string prmConsulta;
-            prmConsulta = "INSERT INTO COMPUTADORES(COM_NRO_SERIAL, EM_NIT, COM_MARCA, COM_CAP_DISCO_DURO_GB, COM_TIPO_DISCO_DURO, COM_CAP_MEMORIA_RAM_GB, COM_FECHA_ENSAMBLE) " +
+            prmConsulta = "INSERT INTO COMPUTADOR(COM_NRO_SERIAL, EM_NIT, COM_MARCA, COM_CAP_DISCO_DURO_GB, COM_TIPO_DISCO_DURO, COM_CAP_MEMORIA_RAM_GB, COM_FECHA_ENSAMBLE) " +
             "VALUES (" + prmSerial + "," + prmEM_NIT + ",'" + prmMarca + "'," + prmCapDiscoDuro + ",'" + prmTipoDisco + "'," + prmCapMemoria + ", TO_DATE('" + prmFechaEnsable + "', 'DD/MM/YY'))";
             varResultado = atrDataBase.executeDML(prmConsulta);
             return varResultado;
@@ -33,10 +28,9 @@ namespace mvcEmpresasComputadoras.Logica
         {
             DataSet varDB;
             string varConsulta;
-            varConsulta = "SELECT * FROM COMPUTADOR WHERE EM_NIT = (SELECT EM_NIT FROM EMPRESA WHERE EM_NOMBRE = '"+ prmEmpresa +"')";
+            varConsulta = "SELECT COM_NRO_SERIAL SERIAL, EM_NIT NIT, COM_MARCA MARCA, COM_CAP_DISCO_DURO_GB \"CAPACIDAD DISCO\", COM_TIPO_DISCO_DURO \"TIPO DISCO\", COM_CAP_MEMORIA_RAM_GB RAM, COM_FECHA_ENSAMBLE \"FECHA ENSAMBLE\" FROM COMPUTADOR WHERE EM_NIT = (SELECT EM_NIT FROM EMPRESA WHERE EM_NOMBRE = '" + prmEmpresa + "')";
             varDB = atrDataBase.executeSELECT(varConsulta);
             return varDB;
-
         }
     }
 }
