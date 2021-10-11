@@ -5,6 +5,8 @@ namespace mvcEmpresasComputadoras.accesoDatos
 {
     public class clsConnectionDB
     {
+        //MODIFIQUE LOS DATOS ACORDE A LOS DATOS DE SU BASE DE DATOS
+
         private static string atrUserDB = "EmpresasComputadoras";
         private static string atrPasswordDB = "bddarwin";
         //private static string atrPasswordDB = "AnteDatabase";
